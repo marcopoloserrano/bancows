@@ -1,0 +1,44 @@
+package Banco;
+
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+
+/**
+ *
+ * @author Marco
+ */
+@WebService(serviceName = "BancoWS")
+public class BancoWS {
+
+
+    /**
+     * Web service operation
+     */
+   
+
+    /**
+     * Web service operation
+     */
+    public Double getCotizacion(@WebParam(name = "fecha") String fecha) {
+        //TODO write your implementation code here:
+        
+        double cot = 1.0;
+        
+        if(fecha.equals("25-06-2019"))
+        {   
+            cot=6.9;
+        }
+        return cot;
+    }
+
+    /**
+     * Web service operation
+     */
+    public double setCotizacion(@WebParam(name = "fecha") String fecha, @WebParam(name = "valor") double valor) {
+        //TODO write your implementation code here:
+        double cot = this.getCotizacion(fecha)*valor;
+        
+        return cot;
+    }
+}
